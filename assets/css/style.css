@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    background: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accordeur {
+    height: 500px;
+    width: 450px;
+    background: rgb(211, 211, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.content {
+    text-align: center;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+p {
+    font-size: 2rem;
+}
+
+button {
+    margin-top: 1.5rem;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+}
+

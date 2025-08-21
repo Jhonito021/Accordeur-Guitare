@@ -90,7 +90,7 @@ body {
     border: 1px solid rgba(0,0,0,0.075);
 }
 
-/* Responsive */
+
 @media (max-width: 576px) {
     .tuner-gauge {
         width: 240px;

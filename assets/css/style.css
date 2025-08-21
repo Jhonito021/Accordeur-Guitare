@@ -1,97 +1,136 @@
+/* Styles spécifiques à l'accordeur */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-    touch-action: manipulation;
+    background: #f8f9fa;
 }
 
-.container {
-    text-align: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 90%;
-}
-
-h1 {
-    color: #333;
-    margin-bottom: 20px;
-    font-size: 1.5em;
-}
-
-.tuner {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.string {
+.tuner-gauge {
     position: relative;
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    width: 280px;
+    height: 160px;
+    margin: 0 auto;
+}
+
+.gauge-arc {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%) translateY(-100%);
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(
+        from 180deg,
+        #dc3545 0deg,
+        #ffc107 60deg,
+        #28a745 90deg,
+        #28a745 90deg,
+        #28a745 270deg,
+        #ffc107 300deg,
+        #dc3545 360deg
+    );
+    border-bottom-left-radius: 280px;
+    border-bottom-right-radius: 280px;
+    -webkit-mask: radial-gradient(closest-side, transparent 70px, #000 71px);
+            mask: radial-gradient(closest-side, transparent 70px, #000 71px);
+    box-shadow: inset 0 -6px 12px rgba(0,0,0,0.08);
+}
+
+.gauge-needle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform-origin: bottom center;
+    transform: translateX(-50%) rotate(0deg);
+}
+
+.gauge-needle::before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    bottom: 10px;
+    width: 4px;
+    height: 85px;
+    background: #212529;
+    border-radius: 2px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.gauge-needle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -6px;
+    width: 12px;
+    height: 12px;
+    background: #212529;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.gauge-marks {
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    user-select: none;
-    touch-action: none;
+    color: #6c757d;
+    font-size: 0.85rem;
 }
 
-.string:hover {
-    background-color: #45a049;
+.gauge-marks .center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.string:active {
-    background-color: #3d8b40;
+.card {
+    border: 1px solid rgba(0,0,0,0.075);
 }
 
-.indicator {
-    width: 20px;
-    height: 5px;
-    background-color: #ccc;
-    border-radius: 2px;
-    transition: background-color 0.2s;
-}
-
-.indicator.in-tune {
-    background-color: #4CAF50;
-}
-
-#startMic {
-    padding: 10px 20px;
-    background-color: #2196F3;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-    max-width: 200px;
-}
-
-#startMic:hover {
-    background-color: #1976D2;
-}
-
-@media (max-width: 600px) {
-    .string {
-        font-size: 14px;
-        padding: 10px;
+/* Responsive */
+@media (max-width: 576px) {
+    .tuner-gauge {
+        width: 240px;
+        height: 140px;
     }
-    h1 {
-        font-size: 1.2em;
-    }
-    #startMic {
-        font-size: 14px;
+    .gauge-needle::before {
+        height: 75px;
     }
 }
+
+/* Dark theme */
+[data-bs-theme="dark"] body {
+    background: #121212;
+}
+
+[data-bs-theme="dark"] .card {
+    background-color: #1e1e1e;
+    color: #e5e5e5;
+    border-color: rgba(255,255,255,0.08);
+}
+
+[data-bs-theme="dark"] .text-muted {
+    color: #b9c0c7 !important;
+}
+
+[data-bs-theme="dark"] .gauge-arc {
+    box-shadow: inset 0 -6px 12px rgba(255,255,255,0.05);
+}
+
+[data-bs-theme="dark"] .gauge-needle::before,
+[data-bs-theme="dark"] .gauge-needle::after {
+    background: #e5e5e5;
+}
+
+[data-bs-theme="dark"] .gauge-needle::after {
+    border-color: #121212;
+}
+
+[data-bs-theme="dark"] .alert-info {
+    background-color: #0b3a48;
+    color: #d1f0ff;
+    border-color: #0d4d61;
+} 

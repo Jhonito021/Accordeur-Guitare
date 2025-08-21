@@ -32,12 +32,88 @@ h1 {
     font-size: 1.5rem;
 }
 
-p {
-    font-size: 2rem;
-}
-
 .string {
     position: relative;
-    
+    background: #4caf50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s;
 }
 
+.string:hover {
+    background: #4ca049;
+}
+
+.string:active, .string.active {
+    background: #3d8b40;
+    animation: vibrate 0.1s infinite;
+}
+
+@keyframes vibrate {
+    0% {
+        transform: translateX(0);
+    } 50% {
+        transform: translateY(-2px);
+    } 100% {
+        transform: translateX(2px);
+    }
+}
+
+.indicator {
+    height: 5px;
+    background: #ccc;
+    border-radius: 2px;
+    margin-top: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.indicator::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background: #ff4444;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background 0.2s;
+}
+
+.indicator.in-tune::after {
+    background: #4caf50;
+}
+
+p {
+    margin-top: 20px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+#mic {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#mic:hover {
+    background: #1976d2;
+}
+
+@media (max-width: 600px) {
+    .string {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+}

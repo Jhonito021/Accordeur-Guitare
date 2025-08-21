@@ -7,18 +7,17 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="accordeur">
-        <div class="content">
-            <div class="note">
-                <h1>E</h1>
-                <p>84 hz</p>
-            </div>
-    
-            <div class="progress">
-    
-            </div>
-            <button class="mic">micro</button>
+    <div class="container-accordeur">
+        <h1>Tunner Guitare</h1>
+        <div class="tunner">
+            <div class="string" onclick="playNote('E2')">E</div>
+            <div class="string" onclick="playNote('A2')">A</div>
+            <div class="string" onclick="playNote('D3')">D</div>
+            <div class="string" onclick="playNote('G3')">G</div>
+            <div class="string" onclick="playNote('B3')">B</div>
+            <div class="string" onclick="playNote('E4')">E</div>
         </div>
+        <button id="mic">Activer le micro</button>
     </div>    
     <script src="assets/js/script.js"></script>
 </body>

@@ -13,33 +13,31 @@ body {
     align-items: center;
 }
 
-.accordeur {
-    height: 500px;
-    width: 450px;
+.container-accordeur {
+    max-width: 90%;
     background: rgb(211, 211, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     border-radius: 10px;
-
+    padding: 20px;
 }
 
-.content {
-    text-align: center;
+.tunner {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 1.5rem;
 }
 
 p {
     font-size: 2rem;
 }
 
-button {
-    margin-top: 1.5rem;
-    padding: 8px;
-    border-radius: 8px;
-    border: none;
-    font-size: 1rem;
+.string {
+    position: relative;
+    
 }
+

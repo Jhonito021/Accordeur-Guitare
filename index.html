@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accodeur</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Accordeur de Guitare</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container-accordeur">
-        <h1>Tunner Guitare</h1>
-        <div class="tunner">
-            <div class="string" onclick="playNote('E2')">E</div>
-            <div class="string" onclick="playNote('A2')">A</div>
-            <div class="string" onclick="playNote('D3')">D</div>
-            <div class="string" onclick="playNote('G3')">G</div>
-            <div class="string" onclick="playNote('B3')">B</div>
-            <div class="string" onclick="playNote('E4')">E</div>
+    <div class="container">
+        <h1>Accordeur de Guitare</h1>
+        <div class="tuner">
+            <div class="string" data-note="E2"><span>E (Mi grave)</span><div class="indicator"></div></div>
+            <div class="string" data-note="A2"><span>A (La)</span><div class="indicator"></div></div>
+            <div class="string" data-note="D3"><span>D (Ré)</span><div class="indicator"></div></div>
+            <div class="string" data-note="G3"><span>G (Sol)</span><div class="indicator"></div></div>
+            <div class="string" data-note="B3"><span>B (Si)</span><div class="indicator"></div></div>
+            <div class="string" data-note="E4"><span>E (Mi aigu)</span><div class="indicator"></div></div>
         </div>
-        <p>Cliquez sur une note</p>
-        <button id="mic">Activer le micro</button>
-    </div>    
-    <script src="assets/js/script.js"></script>
+        <button id="startMic">Activer le micro</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
